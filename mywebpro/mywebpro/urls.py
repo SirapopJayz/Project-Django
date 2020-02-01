@@ -15,7 +15,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-
+from checkin import views as checkin_module
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('checkin/<teacher>/', checkin_module.checkteachid),
+    path('checkin/<sub>/<amt>/<stu>/<abt>/', checkin_module.checkcourse),
+    path('checkin/<qrCode>/', checkin_module.checkin)
 ]
