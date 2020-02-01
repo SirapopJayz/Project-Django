@@ -18,7 +18,7 @@ from django.urls import path
 from checkin import views as checkin_module
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('checkin/<teacher>/', checkin_module.checkteachid),
-    path('checkin/<sub>/<amt>/<stu>/<abt>/', checkin_module.checkcourse),
+    path('teacher/<teacher>/', checkin_module.checkteachid),
+    path('course/<sub>/<int:amt>/<int:stu>/<int:abt>/', checkin_module.checkcourse),
     path('checkin/<qrCode>/', checkin_module.checkin)
 ]
