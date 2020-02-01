@@ -1,6 +1,8 @@
 from django.http import HttpResponse
 from django.shortcuts import render
 
+# Create your views here.
+
 
 def checkteachid(request, teacher):
     return HttpResponse("This Subject is teach by %s." % teacher)
