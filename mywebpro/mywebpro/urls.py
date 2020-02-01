@@ -16,9 +16,22 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from checkin import views as checkin_module
+from dashboard import views as dashboard_module
+from student import views as student_module
+from subject import views as subject_module
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('teacher/<teacher>/', checkin_module.checkteachid),
-    path('course/<sub>/<int:amt>/<int:stu>/<int:abt>/', checkin_module.checkcourse),
-    path('checkin/<qrCode>/', checkin_module.checkin)
+    path('course/<sub>/<int:amt>/<int:stu>/<int:abt>/',
+         checkin_module.checkcourse),
+    path('checkin/<qrCode>/', checkin_module.checkin),
+    path('dashboard', dashboard_module.dashboard),
+    path('search/<semisterId>', dashboard_module.searchDailyCheckIn),
+    path('student/views', student_module.views),
+    path('student/add', student_module.add),
+    path('student/edit', student_module.edit),
+    path('subject/views', subject_module.views),
+    path('subject/add', subject_module.add),
+    path('subject/edit', subject_module.edit)
 ]
